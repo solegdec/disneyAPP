@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes)=> {
 
-    const Series = sequelize.define("Series", 
+    const Movies = sequelize.define("Movies", 
         {
             id:{
                 auroincrement: true,
@@ -33,14 +33,14 @@ module.exports = (sequelize, DataTypes)=> {
             
         },
         {
-            tableName: 'series',
+            tableName: 'movies',
             timestamps: false,
         }
     
     );
     
-    Series.associate = function(models){
-        Series.belongsToMany(models.Characters,{
+    Movies.associate = function(models){
+        Movies.belongsToMany(models.Characters,{
             as: 'characters',
             through: 'characters_series',
             foreignKey: 'character_id',
@@ -50,7 +50,7 @@ module.exports = (sequelize, DataTypes)=> {
         
     };
     
-    return Series
+    return Movies
     
     }
     
