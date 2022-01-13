@@ -6,7 +6,7 @@ let charactersController={
             { include: ['movies']}
         )
             .then(characters => {
-                res.render('chracters', {characters})
+                res.render('characters', {characters})
             })
         
     },

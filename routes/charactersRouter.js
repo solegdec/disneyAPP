@@ -3,4 +3,6 @@ const router= express.Router();
 const charactersController= require ("../controllers/charactersController.js")
 
 
-router.get('/characters', charactersController.list)
+router.get('/', charactersController.list)
+
+module.exports = router;
