@@ -3,22 +3,25 @@ const db = require('../database/models');
 
 
 let apiController={
-
-    createCharacter:(req,res)=>{
-        db.Characters
-            .create(req.body)
-            .then(character=>{
-                return res.status(200).json({
-                    data: character,
-                    status:200,
-                    created:"ok"
-                })
-            })
+    charactersList: async function(req, res){
+        let characters = await db.Characters.findAll({
+            include:["movies"]
+        })
+        let charactersJson = {
+            meta:{
+                count: characters.length,
+                status:200,
+                url: "/api/characters",
+                data:characters
+            },
+            data: characters
+        }
+        res.json(charactersJson);
         
-        },
+    },
+    
 
-
-
+    
 
 
 }

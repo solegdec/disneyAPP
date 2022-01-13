@@ -24,11 +24,7 @@ module.exports = (sequelize, DataTypes)=> {
                 allowNull: false,
                 type: DataTypes.INTEGER
             },
-            character_id:    {
-                foreignKey:true,
-                allowNull: false,
-                type: DataTypes.INTEGER
-            },
+           
     
             
         },
@@ -42,9 +38,9 @@ module.exports = (sequelize, DataTypes)=> {
     Movies.associate = function(models){
         Movies.belongsToMany(models.Characters,{
             as: 'characters',
-            through: 'characters_series',
-            foreignKey: 'character_id',
-            otherKey: "serie_id",
+            through: 'characters_movies',
+            foreignKey: 'movie_id',
+            otherKey: "character_id",
             timestamps: false,
         })
         

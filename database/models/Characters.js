@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes)=> {
     const Characters = sequelize.define("Characters", 
         {
             id:{
-                auroincrement: true,
+                autoincrement: true,
                 primaryKey: true,
                 type: DataTypes.INTEGER
     
@@ -26,11 +26,7 @@ module.exports = (sequelize, DataTypes)=> {
                 allowNull: false,
                 type: DataTypes.STRING
             },
-            movie_id:    {
-                foreignKey:true,
-                allowNull: false,
-                type: DataTypes.INTEGER
-            },
+           
     
             
         },
@@ -49,6 +45,7 @@ module.exports = (sequelize, DataTypes)=> {
             otherKey: "movie_id",
             timestamps: false,
         })
+        
         
     };
     
