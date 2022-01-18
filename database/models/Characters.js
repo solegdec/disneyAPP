@@ -20,6 +20,14 @@ module.exports = (sequelize, DataTypes)=> {
                 allowNull: false,
                 type: DataTypes.STRING
             },
+            peso:{
+                allowNull: false,
+                type: DataTypes.DECIMAL
+            },
+            edad:{
+                allowNull: false,
+                type: DataTypes.INTEGER
+            },
                       
             descripcion:
             {

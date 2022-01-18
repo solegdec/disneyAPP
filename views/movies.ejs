@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movies</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+      
+    <div>
+      <img src="/images/logo.jpg" alt="" height="150px" width="200px">
+    </div>
+    <h1>MOVIES</h1>
+    <% movies.forEach(function(movies){ %>
+    <h2> <%= movies.titulo %>     
+    </h2>
+    <h4>Rating:<%= movies.calificacion %></h4>
+    <div>
+        <img src="/images/<%=movies.imagen%>" height="150px" width="150px">
+    </div>
+    
+    <% }) %>

@@ -9,11 +9,15 @@
     <div>
       <img src="/images/logo.jpg" alt="" height="150px" width="200px">
     </div>
-    <h1>Characters</h1>
+    <h1>CHARACTERS</h1>
     <% characters.forEach(function(characters){ %>
     <h3>
         <%= characters.nombre %>
+        
     </h3>
+    <div>
+        <img src="/images/<%=characters.imagen%>" height="150px" width="150px">
+    </div>
     
     <% }) %>
     
